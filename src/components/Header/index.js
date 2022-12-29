@@ -15,12 +15,14 @@ const styled = StyleSheet.create({
     container:{
         flexDirection:"row",
         justifyContent:"space-between",
+        alignItems:"center",
         paddingVertical:25,
-        paddingHorizontal:20
+        paddingHorizontal:20,
     },  
     text:{
         fontSize:28,
-        fontWeight:"bold"
+        fontWeight:"bold",
+        color:"#0f1519"
     },
     image:{
         width:45,
