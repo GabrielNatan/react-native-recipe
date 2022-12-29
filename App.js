@@ -6,6 +6,7 @@ import { InputText } from "./src/components/InputText";
 import { MiniCards } from "./src/components/MiniCards";
 import comida1 from "./src/assets/comida-1.webp"
 import comida2 from "./src/assets/comida-2.jpg"
+import { Tabs } from "./src/components/Tabs";
 export default function App(){
   return(
     <SafeAreaView style={styled.container}>
@@ -21,6 +22,7 @@ export default function App(){
         <Card img={comida1}/>
         <Card img={comida2}/>
       </ScrollView>
+      <Tabs/>
     </SafeAreaView>
   )
 }
