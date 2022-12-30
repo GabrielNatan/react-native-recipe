@@ -16,7 +16,7 @@ export const Banner = ()=>{
                           blurAmount={5}
                           reducedTransparencyFallbackColor="black"
                     />
-                <Icon name="ios-chevron-back" size={30} color="#FFF"/>
+                <Icon name="ios-chevron-back" size={25} color="#FFF"/>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={()=>setLike(!like)} style={styled.btn}>
                     <BlurView
@@ -26,9 +26,9 @@ export const Banner = ()=>{
                           reducedTransparencyFallbackColor="black"
                     />
                     {like ?
-                    <Icon name="heart" size={30} color="red"/>
+                    <Icon name="heart" size={25} color="red"/>
                     :
-                    <Icon name="heart-outline" size={30} color="#FFF"/>
+                    <Icon name="heart-outline" size={25} color="#FFF"/>
                     }
                 </TouchableOpacity>
             </View>
@@ -55,10 +55,11 @@ const styled = StyleSheet.create({
         zIndex:5,
         justifyContent:"space-between",
         padding:20,
-        width:"100%"
+        width:"100%",
+        alignItems:"center"
     },
     btn:{
-        padding:20,
+        padding:10,
         position: "relative",
         borderRadius:10,
         overflow:"hidden"
