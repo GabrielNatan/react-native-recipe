@@ -22,7 +22,6 @@ export default function Home(){
         <Card img={comida1}/>
         <Card img={comida2}/>
       </ScrollView>
-      <Tabs/>
     </View>
   )
 }
