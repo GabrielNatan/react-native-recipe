@@ -31,7 +31,6 @@ const styled = StyleSheet.create({
         marginHorizontal:"10%",
         position:"absolute",
         bottom:10,
-        elevation:2,
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.5,
