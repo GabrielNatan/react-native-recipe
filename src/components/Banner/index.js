@@ -40,7 +40,7 @@ export const Banner = ()=>{
 
 const styled = StyleSheet.create({
     container:{
-      height:"100%",
+      height:"auto",
       width:"100%"
     },
     image:{
