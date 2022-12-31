@@ -5,7 +5,10 @@ import { Banner } from "../../components/Banner";
 import { CardIngredients } from "../../components/CardIngredients";
 import { CardInstruction } from "../../components/CardInstruction";
 import { CardRecipe } from "../../components/CardRecipe";
-
+import tomate from "../../assets/tomate.png"
+import cenoura from "../../assets/cenoura.png"
+import batata from "../../assets/batata.png"
+import batataDoce from "../../assets/batata-doce.png"
 export default function Recipe(){
     const route = useRoute();
     return(
@@ -20,11 +23,26 @@ export default function Recipe(){
                     horizontal
                     showsHorizontalScrollIndicator={false}
                     >
-                    <CardIngredients/>
-                    <CardIngredients/>
-                    <CardIngredients/>
-                    <CardIngredients/>
-                    <CardIngredients/>
+                    <CardIngredients 
+                        image={tomate}
+                        quant={3}
+                        name="Tomate"
+                    />
+                    <CardIngredients 
+                        image={cenoura}
+                        quant={1}
+                        name="Cenoura"
+                    />
+                    <CardIngredients 
+                        image={batata}
+                        quant={2}
+                        name="Batata"
+                    />
+                    <CardIngredients 
+                        image={batataDoce}
+                        quant={1}
+                        name="Batata Doce"
+                    />
                 </ScrollView>
             </View>
             <View
