@@ -3,13 +3,20 @@ import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import banner from "../../assets/comida-1.webp"
 import Icon from "react-native-vector-icons/Ionicons";
 import { BlurView } from "@react-native-community/blur";
+import { useNavigation } from "@react-navigation/native";
 export const Banner = ()=>{
     const [like,setLike] = useState(false)
+    const navigation = useNavigation()
+
     return(
         <View style={styled.container}>
             <View  style={styled.containerBtn}>
                 <TouchableOpacity 
-                style={styled.btn}>
+                    style={styled.btn}
+                    onPress={()=>{
+                        navigation.goBack()
+                    }}
+                >
                     <BlurView
                           style={styled.absolute}
                           blurType="dark"

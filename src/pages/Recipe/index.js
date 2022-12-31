@@ -5,11 +5,9 @@ import { Banner } from "../../components/Banner";
 import { CardIngredients } from "../../components/CardIngredients";
 import { CardInstruction } from "../../components/CardInstruction";
 import { CardRecipe } from "../../components/CardRecipe";
-import { Tabs } from "../../components/Tabs";
 
 export default function Recipe(){
     const route = useRoute();
-    // console.log(route.params)
     return(
         <ScrollView style={styled.container}>
             <Banner/>
