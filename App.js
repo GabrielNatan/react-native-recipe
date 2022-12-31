@@ -1,14 +1,15 @@
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { NavigationContainer } from "@react-navigation/native";
 import React from "react";
 import { SafeAreaView, StyleSheet } from "react-native";
-import { Tabs } from "./src/components/Tabs";
-import Home from "./src/pages/Home";
-import { Recipe } from "./src/pages/Recipe";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import AppRotas from "./src/Routes/appRotas";
 export default function App(){
   return(
     <SafeAreaView style={styled.container}>
-      <Recipe/>
-      {/* <Home/> */}
-      <Tabs/>
+      <NavigationContainer>
+          <AppRotas/>
+      </NavigationContainer>
     </SafeAreaView>
   )
 }

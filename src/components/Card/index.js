@@ -1,8 +1,14 @@
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, View, Image, Touchable, TouchableOpacity } from "react-native";
 export const Card = ({img})=>{
+    const navigation = useNavigation()
     return(
-        <View>
+        <TouchableOpacity
+            onPress={()=>{
+                navigation.navigate('RecipeScreen',{name:"legal"})
+            }}
+        >
             <Image style={styled.image} source={img}/>
             <Text style={styled.title} >Greek salad</Text>
             <View style={styled.contText} >
@@ -10,7 +16,7 @@ export const Card = ({img})=>{
                 <Text> - </Text>
                 <Text>40 min</Text>
             </View>
-        </View>
+        </TouchableOpacity>
     )
 }
 

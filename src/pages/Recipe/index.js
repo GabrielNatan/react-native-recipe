@@ -1,3 +1,4 @@
+import { useRoute } from "@react-navigation/native";
 import react from "react";
 import { View, Text, StyleSheet, ScrollView } from "react-native";
 import { Banner } from "../../components/Banner";
@@ -6,7 +7,9 @@ import { CardInstruction } from "../../components/CardInstruction";
 import { CardRecipe } from "../../components/CardRecipe";
 import { Tabs } from "../../components/Tabs";
 
-export const Recipe = ()=>{
+export default function Recipe(){
+    const route = useRoute();
+    // console.log(route.params)
     return(
         <ScrollView style={styled.container}>
             <Banner/>

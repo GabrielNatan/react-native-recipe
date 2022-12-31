@@ -9,7 +9,7 @@ import comida2 from "../../../src/assets/comida-2.jpg"
 import { Tabs } from "../../../src/components/Tabs";
 export default function Home(){
   return(
-    <View style={styled.container}>
+    <ScrollView style={styled.container}>
       <Header/>
       <InputText/>
       <MiniCards/>
@@ -22,7 +22,7 @@ export default function Home(){
         <Card img={comida1}/>
         <Card img={comida2}/>
       </ScrollView>
-    </View>
+    </ScrollView>
   )
 }
 
