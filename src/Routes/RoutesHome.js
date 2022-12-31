@@ -7,7 +7,11 @@ import Recipe from '../pages/Recipe';
 const Stack = createNativeStackNavigator();
 
 export default function RoutesHome({ ComponentePrincipal = Home }) {
-    return <Stack.Navigator>
+    return <Stack.Navigator 
+            screenOptions={{
+                headerShown:false,
+            }}
+        >
         <Stack.Screen name='HomeScreen' component={ComponentePrincipal} />
         <Stack.Screen name='RecipeScreen' component={Recipe} />
     </Stack.Navigator>

@@ -1,8 +1,6 @@
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 import React from "react";
 import { SafeAreaView, StyleSheet } from "react-native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import AppRotas from "./src/Routes/appRotas";
 export default function App(){
   return(

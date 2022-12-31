@@ -1,6 +1,5 @@
 import React from 'react';
 
-import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from "react-native-vector-icons/Feather";
 
@@ -29,6 +28,7 @@ export default function AppRotas() {
             },
             tabBarActiveTintColor: 'tomato',
             tabBarInactiveTintColor: 'gray',
+            headerShown:false
           })}
         >
         <Tab.Screen name='Home' component={RoutesHome} />
