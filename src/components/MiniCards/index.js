@@ -4,7 +4,9 @@ import hamburguer from "../../assets/hamburguer.jpg";
 import bebidas from "../../assets/bebidas.jpg";
 import caseira from "../../assets/caseira.jpg";
 import sobremesa from "../../assets/sobremesa.jpg";
+import { useNavigation } from "@react-navigation/native";
 export const MiniCards = ()=>{
+    const navigation = useNavigation()
     return(
         <View style={styled.overflow}>
             <ScrollView 
@@ -12,25 +14,45 @@ export const MiniCards = ()=>{
                 showsHorizontalScrollIndicator={false}  
                 showsVerticalScrollIndicator={false}
                 style={styled.container}>
-                <TouchableOpacity style={styled.card}>
+                <TouchableOpacity 
+                    onPress={()=>{
+                        navigation.navigate("Lista")
+                    }}
+                    style={styled.card}
+                >
                     <Image style={styled.img} source={hamburguer}/>
                     <View style={styled.contText}>
                         <Text style={styled.text}>hamburguer</Text>
                     </View>
                 </TouchableOpacity>
-                <TouchableOpacity style={styled.card}>
+                <TouchableOpacity 
+                    onPress={()=>{
+                        navigation.navigate("Lista")
+                    }}
+                    style={styled.card}
+                >
                     <Image style={styled.img} source={caseira}/>
                     <View style={styled.contText}>
                         <Text style={styled.text}>Comida caseira</Text>
                     </View>
                 </TouchableOpacity>
-                <TouchableOpacity style={styled.card}>
+                <TouchableOpacity 
+                    onPress={()=>{
+                        navigation.navigate("Lista")
+                    }}
+                    style={styled.card}
+                >
                     <Image style={styled.img} source={sobremesa}/>
                     <View style={styled.contText}>
                         <Text style={styled.text}>Sobremesa</Text>
                     </View>
                 </TouchableOpacity>
-                <TouchableOpacity style={styled.card}>
+                <TouchableOpacity 
+                    onPress={()=>{
+                        navigation.navigate("Lista")
+                    }}
+                    style={styled.card}
+                >
                     <Image style={styled.img} source={bebidas}/>
                     <View style={styled.contText}>
                         <Text style={styled.text}>Bebida</Text>
