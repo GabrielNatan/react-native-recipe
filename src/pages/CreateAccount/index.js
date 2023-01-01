@@ -61,7 +61,7 @@ export const CreateAccount = ()=>{
             <Text style={styled.textBtn}>Create Account</Text>
            </TouchableOpacity>
            <TouchableOpacity
-            onPress={()=>{navigation.goBack()}}
+            onPress={()=>{navigation.navigate("Login")}}
            >
                 <Text style={styled.link}>Go to login</Text>
            </TouchableOpacity>

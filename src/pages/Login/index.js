@@ -28,7 +28,10 @@ export const Login = ()=>{
                 />
             </View>  
             
-           <TouchableOpacity style={styled.btn}>
+           <TouchableOpacity 
+                onPress={()=>{navigation.navigate("Home")}}
+                style={styled.btn}
+            >
             <Text style={styled.textBtn}>Entre</Text>
            </TouchableOpacity>
            <TouchableOpacity
