@@ -6,6 +6,7 @@ import Icon from "react-native-vector-icons/Feather";
 import RoutesHome from './RoutesHome';
 import Home from '../pages/Home';
 import Recipe from '../pages/Recipe';
+import { Login } from '../pages/Login';
 
 const Tab = createBottomTabNavigator();
 
@@ -31,6 +32,7 @@ export default function AppRotas() {
             headerShown:false
           })}
         >
+        <Tab.Screen name='Login' component={Login} />
         <Tab.Screen name='Home' component={RoutesHome} />
         <Tab.Screen name='Recipe' component={Recipe} />
       </Tab.Navigator>
