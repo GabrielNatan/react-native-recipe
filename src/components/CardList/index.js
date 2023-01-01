@@ -3,11 +3,12 @@ import hamburguer from "../../assets/hamburguer.jpg"
 import Icons from "react-native-vector-icons/FontAwesome5"
 import Icon from "react-native-vector-icons/Octicons"
 import { useNavigation } from "@react-navigation/native"
+import api from "../../services/api"
 export const CardList = ()=>{
     const navigation = useNavigation()
     return(
         <TouchableOpacity 
-            onPress={()=>{navigation.navigate("Recipe")}}
+            onPress={()=>{navigation.navigate("Recipe",{receita:api.receitas[0]})}}
             style={styled.contCard}>
             <View style={styled.contImage}>
                 <Image  style={styled.image} source={hamburguer}/>

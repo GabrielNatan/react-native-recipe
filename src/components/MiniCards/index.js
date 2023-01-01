@@ -5,7 +5,8 @@ import bebidas from "../../assets/bebidas.jpg";
 import caseira from "../../assets/caseira.jpg";
 import sobremesa from "../../assets/sobremesa.jpg";
 import { useNavigation } from "@react-navigation/native";
-export const MiniCards = ()=>{
+export const MiniCards = ({cards})=>{
+    let images = {hamburguer,bebidas,caseira,sobremesa}
     const navigation = useNavigation()
     return(
         <View style={styled.overflow}>
@@ -14,18 +15,25 @@ export const MiniCards = ()=>{
                 showsHorizontalScrollIndicator={false}  
                 showsVerticalScrollIndicator={false}
                 style={styled.container}>
-                <TouchableOpacity 
-                    onPress={()=>{
-                        navigation.navigate("Lista")
-                    }}
-                    style={styled.card}
-                >
-                    <Image style={styled.img} source={hamburguer}/>
-                    <View style={styled.contText}>
-                        <Text style={styled.text}>hamburguer</Text>
-                    </View>
-                </TouchableOpacity>
-                <TouchableOpacity 
+                    {cards?.map(el=>{
+                        return(
+                            <TouchableOpacity 
+                                key={el.id}
+                                onPress={()=>{
+                                    navigation.navigate("Lista",{name:el.name})
+                                }}
+                                style={styled.card}
+                            >
+                                <Image style={styled.img} source={images[el.img]}/>
+                                <View style={styled.contText}>
+                                    <Text style={styled.text}>{el.name}</Text>
+                                </View>
+                            </TouchableOpacity>
+                        )
+                    })
+
+                    }
+                {/* <TouchableOpacity 
                     onPress={()=>{
                         navigation.navigate("Lista")
                     }}
@@ -57,7 +65,7 @@ export const MiniCards = ()=>{
                     <View style={styled.contText}>
                         <Text style={styled.text}>Bebida</Text>
                     </View>
-                </TouchableOpacity>
+                </TouchableOpacity> */}
                 <View style={styled.gap}></View>
             </ScrollView>
         </View>

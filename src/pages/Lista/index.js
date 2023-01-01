@@ -1,38 +1,49 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { FlatList, StyleSheet, Text, TextInput, View } from "react-native"
 import { CardList } from "../../components/CardList"
 import Icon from 'react-native-vector-icons/EvilIcons';
+import { useRoute } from "@react-navigation/native";
+import api from "../../services/api"
 
 function renderItem(props){
     return<CardList {...props}/>
 }
 
 function Top(){
-    const [text,setText] = useState('')
-
+    const [categoria,setCategory] = useState('')
+    const params = useRoute()
+    useEffect(()=>{
+        setCategory(params.params?.name)
+    },[])
     return(
         <View style={styled.contHeader}>
              <View  style={styled.container}>
             <Icon style={styled.icon} name="search" size={30} color="#CCC" />
             <TextInput
                 style={styled.input}
-                value={text}
                 placeholder="Search"
                 keyboardType="default"
-                onChangeText={(value)=>{setText(value)}}
+                onChangeText={setCategory}
+                value={categoria}
             />
         </View>
-            <Text style={styled.title}>Pesquisa: Torta de uva</Text>
+            <Text style={styled.title}>Resultados: {categoria}</Text>
         </View>
     )
 }
 
 export const Lista = ()=>{
+    const params = useRoute()
+    const [data,setData] = useState(api.receitas)
+    const [categoria,setCategory] = useState(params.params?.name)
+    useEffect(()=>{
+        setData(api.receitas.filter(res=> res.category === categoria))
+    },[categoria])
     return(
         <FlatList
-            data={["um","dois","tres","quatro","cinco","seis","sete"]}
+            data={data}
             renderItem={renderItem}
-            keyExtractor={item=> item}
+            keyExtractor={item=> item.id}
             ListHeaderComponent={Top}
         />
             

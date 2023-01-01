@@ -1,12 +1,13 @@
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { StyleSheet, Text, View, Image, Touchable, TouchableOpacity } from "react-native";
+import api from "../../services/api"
 export const Card = ({img})=>{
     const navigation = useNavigation()
     return(
         <TouchableOpacity
             onPress={()=>{
-                navigation.navigate('RecipeScreen',{name:"legal"})
+                navigation.navigate('RecipeScreen',{receita:api.receitas[0]})
             }}
         >
             <Image style={styled.image} source={img}/>

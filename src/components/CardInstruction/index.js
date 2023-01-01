@@ -1,19 +1,26 @@
 import { StyleSheet, Text, View } from "react-native"
 
-export const CardInstruction = ()=>{
+export const CardInstruction = ({instructions = []})=>{
     return(
         <View style={styled.container}>
-            <Text style={styled.title}>Step 1</Text>
-            <Text style={styled.text}>Bring well-salted water to boil. Cook the</Text>
+            {instructions?.map((el, index)=>{
+                return(
+                    <>
+                        <Text style={styled.title}>Step {index + 1}</Text>
+                        <Text style={styled.text}>{el}</Text>
+                    </>
+                )
+            })
+
+            }
         </View>
     )
 }
 
 const styled = StyleSheet.create({
     container:{
-        height:600,
         padding:20,
-        backgroundColor:"yellow",
+        backgroundColor:"#E0E2F5",
         borderRadius:20
     },
     title:{
@@ -22,6 +29,7 @@ const styled = StyleSheet.create({
         marginBottom:10
     },
     text:{
-        color:"#525252"
+        color:"#525252",
+        marginBottom:10
     }
 })

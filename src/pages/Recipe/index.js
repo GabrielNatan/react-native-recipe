@@ -1,5 +1,5 @@
 import { useRoute } from "@react-navigation/native";
-import react from "react";
+import react, { useEffect, useState } from "react";
 import { View, Text, StyleSheet, ScrollView } from "react-native";
 import { Banner } from "../../components/Banner";
 import { CardIngredients } from "../../components/CardIngredients";
@@ -11,6 +11,12 @@ import batata from "../../assets/batata.png"
 import batataDoce from "../../assets/batata-doce.png"
 export default function Recipe(){
     const route = useRoute();
+    const [receita,setReceita] = useState({})
+    useEffect(()=>{
+        if(route.params?.receita){
+            setReceita(route.params?.receita) 
+        }
+    },[])
     return(
         <ScrollView style={styled.container}>
             <Banner/>
@@ -49,7 +55,7 @@ export default function Recipe(){
               style={styled.contInstruction}
               >
                 <Text style={styled.title}>Cooking instruction</Text>
-                <CardInstruction/>
+                <CardInstruction instructions={receita?.step}/>
             </View>
             <View style={styled.marginBottom}></View>
         </ScrollView>

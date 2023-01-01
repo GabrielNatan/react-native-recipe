@@ -6,12 +6,13 @@ import { InputText } from "../../../src/components/InputText";
 import { MiniCards } from "../../../src/components/MiniCards";
 import comida1 from "../../../src/assets/comida-1.webp"
 import comida2 from "../../../src/assets/comida-2.jpg"
+import api from "../../services/api"
 export default function Home(){
   return(
     <ScrollView style={styled.container}>
       <Header/>
       <InputText/>
-      <MiniCards/>
+      <MiniCards cards={api.categorias}/>
       <ScrollView 
         horizontal
         showsHorizontalScrollIndicator={false}
