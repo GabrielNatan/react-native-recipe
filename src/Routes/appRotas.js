@@ -7,6 +7,7 @@ import RoutesHome from './RoutesHome';
 import Home from '../pages/Home';
 import Recipe from '../pages/Recipe';
 import { Login } from '../pages/Login';
+import { CreateAccount } from '../pages/CreateAccount';
 
 const Tab = createBottomTabNavigator();
 
@@ -33,6 +34,7 @@ export default function AppRotas() {
           })}
         >
         <Tab.Screen name='Login' component={Login} />
+        <Tab.Screen name='Create account' component={CreateAccount} />
         <Tab.Screen name='Home' component={RoutesHome} />
         <Tab.Screen name='Recipe' component={Recipe} />
       </Tab.Navigator>
