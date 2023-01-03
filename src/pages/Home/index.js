@@ -1,5 +1,5 @@
 import React from "react";
-import { ScrollView, StyleSheet } from "react-native";
+import { ScrollView, StyleSheet, Text } from "react-native";
 import { Card } from "../../../src/components/Card";
 import { Header } from "../../../src/components/Header"
 import { InputText } from "../../../src/components/InputText";
@@ -13,6 +13,7 @@ export default function Home(){
       <Header/>
       <InputText/>
       <MiniCards cards={api.categorias}/>
+      <Text style={styled.title}>Dicas do dia</Text>
       <ScrollView 
         horizontal
         showsHorizontalScrollIndicator={false}
@@ -34,5 +35,10 @@ const styled = StyleSheet.create({
   conCard:{
     flexDirection:"row",
     padding:20
+  },
+  title:{
+    marginHorizontal:20,
+    fontWeight:"bold",
+    fontSize:25
   }
 })
