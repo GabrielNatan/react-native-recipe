@@ -2,27 +2,28 @@ import { Alert, StyleSheet, Text, TextInput, TouchableOpacity, View } from "reac
 import Icons from "react-native-vector-icons/EvilIcons"
 import Icon from "react-native-vector-icons/Octicons"
 import { useNavigation } from "@react-navigation/native"
-import { useState } from "react"
-import { v4 as uuidv4 } from 'uuid';
-import AsyncStorage from "@react-native-async-storage/async-storage"
+import { useContext, useState } from "react"
+import { AuthContext } from "../../context/AuthContext"
+// import AsyncStorage from "@react-native-async-storage/async-storage"
 export const CreateAccount = ()=>{
     const navigation = useNavigation()
     const [name,setName] = useState('')
     const [email,setEmail] = useState('')
     const [password,setPassword] = useState('')
+    const { createAccount } = useContext(AuthContext)
 
-    async function createAccount(){
+    async function createAccountPage(){
         if(name && email && password){
-            let user = {name,email,password}
-            await AsyncStorage.setItem("name",name)
-            await AsyncStorage.setItem("email",email)
-            await AsyncStorage.setItem("password",password)
-            await AsyncStorage.setItem("login","false")
+            createAccount(name,email,password)
+            // await AsyncStorage.setItem("name",name)
+            // await AsyncStorage.setItem("email",email)
+            // await AsyncStorage.setItem("password",password)
+            // await AsyncStorage.setItem("login","false")
             return
         }
-        let abc = await AsyncStorage.getAllKeys()
-        let asyncName = await AsyncStorage.getItem("name")
-        console.log(asyncName)
+        // let abc = await AsyncStorage.getAllKeys()
+        // let asyncName = await AsyncStorage.getItem("name")
+        // console.log(asyncName)
     }
 
     return(
@@ -55,7 +56,7 @@ export const CreateAccount = ()=>{
             </View>  
             
            <TouchableOpacity
-            onPress={()=>{createAccount()}}
+            onPress={()=>{createAccountPage()}}
             style={styled.btn}
             >
             <Text style={styled.textBtn}>Create Account</Text>

@@ -44,7 +44,7 @@ export const Login = ()=>{
             <Text style={styled.textBtn}>Entre</Text>
            </TouchableOpacity>
            <TouchableOpacity
-            onPress={()=>{navigation.navigate("Create Account")}}
+            onPress={()=>{navigation.navigate("Create account")}}
            >
                 <Text style={styled.link}>Create account</Text>
            </TouchableOpacity>

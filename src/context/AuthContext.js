@@ -4,20 +4,23 @@ export const AuthContext = createContext({})
 
 export const AuthProvider = ({children})=>{
     const [user,setUser] = useState({nome:""})
+    const [newUser,setNewUser] = useState({})
     
     function login(email,password){
-        console.log("Email: ",email)
-        console.log("Password: ",password)
-        console.log("IGUAL: ",email === "email@email.com" && password === "123")
-        if(email === "email@email.com" && password == "123"){
-            setUser({nome:"Gabriel"})
+
+        if(email === newUser?.email && password == newUser?.password){
+            setUser({nome:newUser?.name})
             return 'Ok'
         }else{
             return 'erro'
         }
     }
+
+    function createAccount(name,email,password){
+        setNewUser({name,email,password})
+    }
     return(
-        <AuthContext.Provider value={{user,login}}>
+        <AuthContext.Provider value={{user,login,createAccount}}>
             {children}
         </AuthContext.Provider>
     )
