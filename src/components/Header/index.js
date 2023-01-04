@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { StyleSheet, View } from "react-native";
 import { Text,Image } from "react-native";
 import perfil from "../../assets/perfil.webp";
+import { AuthContext } from "../../context/AuthContext";
 export const Header = ()=>{
+    const { user } = useContext(AuthContext)
     return(
         <View style={styled.container}>
-            <Text style={styled.text}>Hello, Gabriel</Text>
+            <Text style={styled.text}>Hello, {user?.nome}</Text>
             <Image style={styled.image} source={perfil}/>
         </View>
     )

@@ -14,7 +14,7 @@ export default function AppRotas() {
 
   async function verifylogin(){
     let islogged = await AsyncStorage.getItem("login")
-    if(islogged){navigate("Home")}
+    // if(islogged){navigate("Home")}
   }
 
   useEffect(()=>{

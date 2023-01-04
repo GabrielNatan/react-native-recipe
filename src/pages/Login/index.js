@@ -1,12 +1,21 @@
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native"
-import Icons from "react-native-vector-icons/EvilIcons"
 import Icon from "react-native-vector-icons/Octicons"
 import { useNavigation } from "@react-navigation/native"
-import { useState } from "react"
+import { useContext, useState } from "react"
+import { AuthContext } from "../../context/AuthContext"
 export const Login = ()=>{
     const navigation = useNavigation()
     const [email,setEmail] = useState('')
     const [password,setPassword] = useState('')
+    const { login } = useContext(AuthContext)
+
+    function loginAccount(){
+        console.log("AQui")
+        let isLogged = login(email,password)
+        if(isLogged === 'Ok'){
+            navigation.navigate("Home")
+        }
+    }
     return(
         <View style={styled.container}> 
             <Text style={styled.h1}>Login</Text>
@@ -29,13 +38,13 @@ export const Login = ()=>{
             </View>  
             
            <TouchableOpacity 
-                onPress={()=>{navigation.navigate("Home")}}
+                onPress={()=>{loginAccount()}}
                 style={styled.btn}
             >
             <Text style={styled.textBtn}>Entre</Text>
            </TouchableOpacity>
            <TouchableOpacity
-            onPress={()=>{navigation.navigate("Create account")}}
+            onPress={()=>{navigation.navigate("Create Account")}}
            >
                 <Text style={styled.link}>Create account</Text>
            </TouchableOpacity>
