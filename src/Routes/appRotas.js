@@ -23,6 +23,6 @@ export default function AppRotas() {
   return <Stack.Navigator screenOptions={{headerShown:false}}>
       <Stack.Screen name='Login' component={Login} />
       <Stack.Screen name='Create account' component={CreateAccount} />
-      <Stack.Screen name='Home' component={RoutesHome} />
+      <Stack.Screen name='HomeScreen' component={RoutesHome} />
     </Stack.Navigator>
 }

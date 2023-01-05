@@ -1,10 +1,8 @@
-import { Alert, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native"
-import Icons from "react-native-vector-icons/EvilIcons"
+import { StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native"
 import Icon from "react-native-vector-icons/Octicons"
 import { useNavigation } from "@react-navigation/native"
 import { useContext, useState } from "react"
 import { AuthContext } from "../../context/AuthContext"
-// import AsyncStorage from "@react-native-async-storage/async-storage"
 export const CreateAccount = ()=>{
     const navigation = useNavigation()
     const [name,setName] = useState('')
@@ -15,15 +13,8 @@ export const CreateAccount = ()=>{
     async function createAccountPage(){
         if(name && email && password){
             createAccount(name,email,password)
-            // await AsyncStorage.setItem("name",name)
-            // await AsyncStorage.setItem("email",email)
-            // await AsyncStorage.setItem("password",password)
-            // await AsyncStorage.setItem("login","false")
             return
         }
-        // let abc = await AsyncStorage.getAllKeys()
-        // let asyncName = await AsyncStorage.getItem("name")
-        // console.log(asyncName)
     }
 
     return(

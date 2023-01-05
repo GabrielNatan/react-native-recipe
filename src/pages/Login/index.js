@@ -13,7 +13,7 @@ export const Login = ()=>{
         console.log("AQui")
         let isLogged = login(email,password)
         if(isLogged === 'Ok'){
-            navigation.navigate("Home")
+            navigation.navigate("HomeScreen")
         }
     }
     return(

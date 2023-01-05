@@ -14,7 +14,7 @@ export default function RoutesHome({ ComponentePrincipal = Home }) {
             tabBarIcon: ({ focused, color, size }) => {
             let iconName;
 
-            if (route.name === 'HomeScreen') {
+            if (route.name === 'Home') {
                 iconName = focused
                 ? 'home'
                 : 'home';
@@ -30,6 +30,6 @@ export default function RoutesHome({ ComponentePrincipal = Home }) {
             headerShown:false,
         })}
         >
-        <Tab.Screen name='HomeScreen' component={ComponentePrincipal} />
+        <Tab.Screen name='Home' component={ComponentePrincipal} />
     </Tab.Navigator>
 }
